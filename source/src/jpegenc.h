@@ -887,7 +887,7 @@ int jpegenc::encode(const char *filename, SDL_Surface *image, int jpegquality, c
     free(bitcode_alloc);
     delete fp_jpeg_stream;
     return 0;
-};
+}
 
 #endif
 

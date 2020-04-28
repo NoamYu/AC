@@ -264,7 +264,7 @@ void audiomanager::applymapsoundchanges() // during map editing, drop all mapsou
 void audiomanager::setchannels(int num)
 {
     if(!nosound) sourcescheduler::instance().init(num);
-};
+}
 
 
 

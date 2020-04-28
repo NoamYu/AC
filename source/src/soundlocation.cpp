@@ -303,5 +303,5 @@ void locvector::deleteworldobjsounds()
 
         delete_(i--);
     }
-};
+}
 

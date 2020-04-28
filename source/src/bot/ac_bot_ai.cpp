@@ -127,12 +127,12 @@ bool CACBot::ChoosePreferredWeapon()
         SelectGun(bestWeapon);
     }
     return true;
-};
+}
 
 void CACBot::Reload(int Gun)
 {
 
-};
+}
 
 entity *CACBot::SearchForEnts(bool bUseWPs, float flRange, float flMaxHeight)
 {
