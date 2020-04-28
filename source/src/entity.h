@@ -254,6 +254,8 @@ struct poshist
 class playerstate
 {
 public:
+    const size_t MAX_HEALTH = 100;
+
     int health, armour;
     int primary, nextprimary;
     int gunselect;
@@ -328,7 +330,7 @@ public:
 
     void respawn()
     {
-        health = 100;
+        health = MAX_HEALTH;
         armour = 0;
         gunselect = GUN_PISTOL;
         akimbo = false;

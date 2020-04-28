@@ -29,7 +29,7 @@ ifneq (,$(findstring clang,$(CXX)))
 	CXXFLAGS= -O3 -fomit-frame-pointer
 	override CXXFLAGS+= -Wall -fsigned-char
 else
-	CXXFLAGS= -O3 -fomit-frame-pointer -pedantic
+	CXXFLAGS= -O3 -fomit-frame-pointer
 	override CXXFLAGS+= -Wall -fsigned-char -ffast-math -rdynamic -Wno-format-zero-length
 endif
 

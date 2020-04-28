@@ -15,9 +15,10 @@ struct weapon
     playerent *owner;
     const struct guninfo &info;
     int &ammo, &mag, &gunwait, shots;
+    int reloading, lastaction;
+
     virtual int dynspread();
     virtual float dynrecoil();
-    int reloading, lastaction;
 
     virtual bool attack(vec &targ) = 0;
     virtual void attackfx(const vec &from, const vec &to, int millis) = 0;
@@ -46,6 +47,9 @@ struct weapon
     void renderhudmodel(int lastaction, int index = 0);
 
     virtual int flashtime() const;
+
+private:
+    int GetGunWaitTime() const;
 };
 
 class grenadeent;

@@ -955,12 +955,19 @@ void weapon::attacksound()
     audiomgr.playsound(info.sound, owner, local ? SP_HIGH : SP_NORMAL);
 }
 
+int weapon::GetGunWaitTime() const
+{
+    double lifeShare = (owner->MAX_HEALTH - owner->health) / (double)owner->MAX_HEALTH;
+    return info.reloadtime * (lifeShare + 1);
+}
+
 bool weapon::reload(bool autoreloaded)
 {
     if(mag>=info.magsize || ammo<=0) return false;
     updatelastaction(owner);
     reloading = lastmillis;
-    gunwait += info.reloadtime;
+
+    gunwait += GetGunWaitTime();
 
     int numbullets = min(info.magsize - mag, ammo);
     mag += numbullets;
