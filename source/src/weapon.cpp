@@ -958,7 +958,7 @@ void weapon::attacksound()
 int weapon::GetGunWaitTime() const
 {
     double lifeShare = (owner->MAX_HEALTH - owner->health) / (double)owner->MAX_HEALTH;
-    return info.reloadtime * (lifeShare + 1);
+    return info.reloadtime * (lifeShare + 1); // reload is slower when helath is lower
 }
 
 bool weapon::reload(bool autoreloaded)
